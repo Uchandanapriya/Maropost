@@ -11,6 +11,43 @@
   </head>
 
   <body>
-    <%= yield %>
+  <div id="wrapper">
+
+	<div id="header">
+		<h1>Admin Login</h1>
+	</div>
+
+	<div id="menu">
+		<ul>
+			<li><a href="#">Welcome</a></li>
+			<li><a href="#">About</a></li>
+			<% if session[:admin] %>
+			<li><a href="/admin/logout">Admin Logout</a></li>
+			<% else %>
+ 			<li><a href="/admin/login">Admin Login</a></li>
+			<li><a href="#">Phone</a></li>
+			<% end %>
+		</ul>
+	</div>
+
+	
+
+	<div id="content">
+
+
+
+
+      <%= yield%>
+			
+			
+	</div>
+
+	<div id="footer">
+		<div id="footer-valid">
+			<a href="http://validator.w3.org/check/referer">xhtml</a> / <a href="http://www.ginger-ninja.net/">ginger ninja!</a>
+		</div>
+	</div>
+
+</div>
   </body>
 </html>
